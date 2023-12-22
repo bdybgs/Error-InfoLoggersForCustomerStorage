@@ -1,0 +1,7 @@
+21:03:33.560 [main] ERROR Main - error message is written to error.log
+21:03:38.900 [main] ERROR Main - Error while processing 'add' command
+java.lang.ArrayIndexOutOfBoundsException: неверный формат ввода уебан
+	at CustomerStorage.addCustomer(CustomerStorage.java:20) ~[classes/:?]
+	at Main.main(Main.java:33) [classes/:?]
+21:13:30.010 [main] ERROR Main - error message is written to error.log
+21:13:30.011 [main] INFO  Main - Info message is written in info.log 

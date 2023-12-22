@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <!-- Общий аппендер для консоли -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+
+        <!-- Аппендер для файла ошибок -->
+        <File name="ErrorFile" fileName="logs/errors.log">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+
+        <!-- Аппендер для файла информации -->
+        <File name="InfoFile" fileName="logs/info.log">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <!-- Логгер для ошибок -->
+        <Logger name="com.example.errors" level="error" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="ErrorFile"/>
+        </Logger>
+
+        <!-- Логгер для информации -->
+        <Logger name="com.example.info" level="info" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="InfoFile"/>
+        </Logger>
+
+        <!-- Корневой логгер -->
+        <Root level="error">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="ErrorFile"/>
+        </Root>
+
+    </Loggers>
+</Configuration>
